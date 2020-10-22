@@ -6,16 +6,31 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class UserListViewController: UIViewController {
     @IBOutlet var userTableView: UITableView!
+    var userVM = UserListVM()
+    var progressHUD : MBProgressHUD?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let userCell = UINib(nibName: "UserTableViewCell", bundle: nil)
+        self.userTableView.register(userCell, forCellReuseIdentifier: "UserCell")
+        self.userTableView.tableFooterView = UIView(frame: .zero)
+        self.userTableView.rowHeight = UITableView.automaticDimension
 
-        // Do any additional setup after loading the view.
+        GetData()
+        
     }
 
+    func GetData() {
+        progressHUD?.show(animated: true)
+        userVM.getUserList()
+        progressHUD?.hide(animated: true)
 
+    }
     /*
     // MARK: - Navigation
 

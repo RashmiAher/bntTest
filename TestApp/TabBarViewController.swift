@@ -33,9 +33,9 @@ class TabBarViewController: UITabBarController {
         
         self.viewControllers = [articlePage,usersPage]
         self.selectedIndex = 0
-        tabBar.tintColor = .red
-        tabBar.unselectedItemTintColor = .green
-        tabBar.barTintColor = .blue
+        tabBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        tabBar.unselectedItemTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tabBar.barTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
         
     }
